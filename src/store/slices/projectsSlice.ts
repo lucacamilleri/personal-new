@@ -68,6 +68,16 @@ export const fetchProjects = createAsyncThunk<Project[]>(
             technologies: ['Vite.js','CSS','Firebase'],
             category: 'web',
             featured: false
+          },
+          {
+            id: 'lumin',
+            title: 'Lumin - 3D Platformer Game Concept',
+            description: 'A single page web application for a 3D platformer game concept, showcasing engaging gameplay mechanics and immersive environments.',
+            image: `${basePath}lumin.png`,
+            link: 'https://lucacamilleri.github.io/lumin-game/',
+            technologies: ['Unity', 'C#', 'Game Development'],
+            category: 'game',
+            featured: false,
           }
         ]);
       }, 500);
