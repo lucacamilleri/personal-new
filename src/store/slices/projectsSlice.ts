@@ -74,7 +74,7 @@ export const fetchProjects = createAsyncThunk<Project[]>(
             title: 'Lumin - 3D Platformer Game Concept',
             description: 'A single page web application for a 3D platformer game concept, showcasing engaging gameplay mechanics and immersive environments.',
             image: `${basePath}lumin.png`,
-            link: 'https://lucacamilleri.github.io/lumin-game/',
+            link: 'https://lucacamilleri.github.io/lumin/',
             technologies: ['React.js', 'CSS'],
             category: 'web',
             featured: false,

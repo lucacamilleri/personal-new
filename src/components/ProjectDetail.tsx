@@ -12,30 +12,24 @@ const ProjectDetail = () => {
   const { selectedProject, projects, loading } = useSelector((state: RootState) => state.projects);
   const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
 
-  // Fetch projects if not already loaded
   useEffect(() => {
     if (projects.length === 0 && !loading) {
       dispatch(fetchProjects());
     }
   }, [projects.length, loading, dispatch]);
 
-  // Set selected project once projects are loaded
   useEffect(() => {
     if (projectId && projects.length > 0) {
       dispatch(setSelectedProject(projectId));
     }
   }, [projectId, projects.length, dispatch]);
 
-  // Redirect if project not found after projects are loaded
   useEffect(() => {
-    // Only redirect if projects have been loaded AND project still not found
     if (projects.length > 0 && !loading && !selectedProject && projectId) {
-      // Project not found, redirect back
       navigate('/portfolio', { replace: true });
     }
   }, [selectedProject, projects.length, loading, navigate, projectId]);
 
-  // Show loading state while fetching projects or if no project selected yet
   if (loading || (projects.length === 0) || !selectedProject) {
     return (
       <div className="project-detail-loading">
